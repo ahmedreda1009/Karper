@@ -1,0 +1,72 @@
+/* table of contenets 
+
+1. global styles
+
+2. variables
+
+3. typography
+
+4. components
+    4.1 component one
+
+5. layout
+*/
+
+/*  =============
+    global styles
+    =============  */
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: sans-serif;
+}
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*  =============
+    variables
+    =============  */
+
+:root {
+    --main-color: ;
+    --sec-color: ;
+    --main-trans-duration: ;
+    --main-sec-padding: ;
+}
+
+/*  =============
+    typography
+    =============  */
+
+
+
+/*  =============
+    components
+    =============  */
+
+    /* component one  */
+
+
+/*  =============
+    layout
+    =============  */
+
+
+
+
+    
