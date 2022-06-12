@@ -1,17 +1,3 @@
-/* table of contenets 
-
-1. global styles
-
-2. variables
-
-3. typography
-
-4. components
-    4.1 component one
-
-5. layout
-*/
-
 /*  =============
     global styles
     =============  */
@@ -32,41 +18,27 @@ body{
     font-family: sans-serif;
 }
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    margin: 0 auto;
+    padding: 15px;
+    max-width: 85%;
 }
 
 /*  =============
-    variables
+      variables
     =============  */
 
 :root {
-    --main-color: ;
-    --sec-color: ;
-    --main-trans-duration: ;
-    --main-sec-padding: ;
+    --main-color: #19c8fa;
 }
 
 /*  =============
-    typography
+       layout
     =============  */
 
-
-
-/*  =============
-    components
-    =============  */
-
-    /* component one  */
-
-
-/*  =============
-    layout
-    =============  */
-
-
-
-
-    
+header {
+    background-image: url(../imgs/landing.jpg);
+    filter: blur();
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
