@@ -20,8 +20,8 @@ body{
 .container {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 @media (min-width:576px) {
     .container {
@@ -108,6 +108,7 @@ body{
     --main-color: #19c8fa;
     --trans-color: rgba(15, 116, 143, 70%);
     --light-black-color: #777;
+    --overlay-color: hsla(0, 0%, 0%, 0.535);
 }
 
 /*  =============
@@ -250,8 +251,10 @@ main .text .content {
     margin-inline: 5px;
 }
 
+.bullets div:hover {
+    background-color: var(--trans-color);
+}
 
-.bullets div:hover,
 .bullets div:nth-child(2) {
     background-color: var(--main-color);
 }
@@ -586,9 +589,6 @@ section.video-block .text button {
 }
 /* the end of vedio block section  *******************************************/
 /* the start of about us  section  *******************************************/
-section.about {
-    margin-bottom: 30px;
-}
 
 section.about .image {
     text-align: center;
@@ -621,5 +621,247 @@ section.about .image img {
 /* the start of statistics block section  *******************************************/
 section.statistics {
     background-image: url(../imgs/stats.png);
+    background-size: cover;
+    padding: 60px 0;
+    position: relative;
+    z-index: 0;
+    margin-bottom: 50px;
+}
+
+section.statistics .overlay {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+section.statistics .stat-container {
+    width: 100%;
+    background-color: var(--trans-color);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+section.statistics .stat-container .unit {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    flex-basis: 100%;
+    padding-block: 50px;
+}
+@media (min-width: 768px) {
+    section.statistics .stat-container .unit {
+        flex-basis: 50%;
+    }
+}
+@media (min-width: 992px) {
+    section.statistics .stat-container .unit {
+        flex-basis: 25%;
+    }
+}
+
+section.statistics .stat-container .unit div:first-child {
+    font-size: 20px;
+    background-color: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    position: relative;
+}
+
+section.statistics .stat-container .unit i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+section.statistics .stat-container .unit:last-child div i {
+    left: 13px;
+}
+
+section.statistics .stat-container .unit:first-child div i {
+    left:11px;
+}
+
+section.statistics .stat-container .unit div:nth-child(2) {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+section.statistics .stat-container .unit h4 {
+    font-weight: 100;
+    font-size: 15px;
 }
 /* the end of statistics block section  *******************************************/
+/* the end of  testimonials-skills section  *******************************************/
+section.testimonials-skills {
+    margin-bottom: 80px;
+}
+
+section.testimonials-skills .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    column-gap: 80px;
+}
+
+section.testimonials-skills .testimonials .head,
+section.testimonials-skills .skills .head {
+    text-align: center;
+    margin-block: 30px;
+}
+
+section.testimonials-skills .testimonials .head h3,
+section.testimonials-skills .skills .head h3 {
+    font-weight: normal;
+    font-size: 20px;
+    margin-block: 30px;
+}
+
+section.testimonials-skills .testimonials .head h3 + p,
+section.testimonials-skills .skills .head h3 + p {
+    font-size: 16px;
+    margin-bottom: 50px;
+    color: var(--light-black-color);
+    line-height: 2;
+}
+
+section.testimonials-skills .testimonials .content {
+    display: flex;
+    flex-direction: column;
+}
+
+section.testimonials-skills .testimonials .content article {
+    display: flex;
+    margin-block: 20px;
+}
+@media (max-width: 768px) {
+    section.testimonials-skills .testimonials .content article {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+section.testimonials-skills .testimonials .content article .image img {
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+
+section.testimonials-skills .testimonials .content article .text {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+}
+
+section.testimonials-skills .testimonials .content article .text p {
+    /* margin-block: 20px; */
+}
+
+section.testimonials-skills .testimonials .content article .text div h4 {
+    margin-block: 10px;
+    float: right;
+    color: var(--light-black-color);
+    font-weight: normal;
+    font-size: 15px;
+}
+
+section.testimonials-skills .testimonials .content article .text div h4 + div {
+    clear: both;
+}
+
+section.testimonials-skills .testimonials .content .bullets {
+    position: relative;
+    margin-top: 20px;
+}
+
+section.testimonials-skills .testimonials .content .bullets div {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid var(--light-black-color);
+}
+
+section.testimonials-skills .skills .prog-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* section.testimonials-skills .skills .prog-bars .bar {
+    margin-block: 30px;
+} */
+
+section.testimonials-skills .skills .prog-bars .bar h3 {
+    font-weight: 500;
+    font-size: 16px;
+    margin-block: 10px;
+}
+
+section.testimonials-skills .skills .prog-bars .bar div {
+    height: 30px;
+    width: 100%;
+    background-color: rgba(192, 192, 192, 0.5);
+}
+
+section.testimonials-skills .skills .prog-bars .bar div .prog {
+    height: 30px;
+    width: 90%;
+    background-color: var(--main-color);
+    position: relative;
+}
+
+section.testimonials-skills .skills .prog-bars .bar:nth-child(2) div .prog {
+    width: 70%;
+}
+
+section.testimonials-skills .skills .prog-bars .bar:nth-child(3) div .prog {
+    width: 80%;
+}
+
+section.testimonials-skills .skills .prog-bars .bar:nth-child(4) div .prog {
+    width: 95%;
+}
+
+section.testimonials-skills .skills .prog-bars .bar div .prog::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    border: 10px solid red;
+    border-color: black transparent transparent transparent;
+}
+
+section.testimonials-skills .skills .prog-bars .bar div .prog::before {
+    content: "";
+    position: absolute;
+    top: -43px;
+    right: -19px;
+    width: 40px;
+    height: 30px;
+    background-color: black;
+    border-radius: 2px;
+    color: white;
+    text-align: center;
+    line-height: 30px;
+}
+
+section.testimonials-skills .skills .prog-bars .bar:first-child div .prog::before {
+    content: attr(data-prog);
+}
+
+section.testimonials-skills .skills .prog-bars .bar:nth-child(2) div .prog::before {
+    content: '70%';
+}
+
+section.testimonials-skills .skills .prog-bars .bar:nth-child(3) div .prog::before {
+    content: '80%';
+}
+
+section.testimonials-skills .skills .prog-bars .bar:nth-child(4) div .prog::before {
+    content: '95%';
+}
+/* the end of testimonials-skills section  *******************************************/
