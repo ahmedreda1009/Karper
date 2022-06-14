@@ -85,10 +85,19 @@ body{
 .special-heading p {
     width: 550px;
     max-width: 100%;
-    font-size: 1.125rem;
+    font-size: 1.1rem;
     font-weight: normal;
     color: var(--light-black-color);
     margin: auto;
+    line-height: 2;
+}
+
+/* 2. overlay */
+
+.overlay {
+    background-color: hsla(0, 0%, 0%, 0.535);
+    width: 100%;
+    height: 100%;
 }
 
 /*  =============
@@ -169,11 +178,6 @@ main {
     background-size: cover;
 }
 
-main .overlay {
-    background-color: hsla(0, 0%, 0%, 0.535);
-    width: 100%;
-    height: 100%;
-}
 /* the end of the header ****************************************************/
 
 /* the beginning of the main ***********************************************/
@@ -367,9 +371,6 @@ section.image-block {
 }
 
 section.image-block .overlay {
-    background-color: hsla(0, 0%, 0%, 0.535);
-    width: 100%;
-    height: 100%;
     position: absolute;
 }
 
@@ -440,7 +441,7 @@ section.portfolio ul {
 
 section.portfolio ul li {
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 section.portfolio ul li:hover {
@@ -452,13 +453,32 @@ section.portfolio ul li:first-child {
     background-color:var(--main-color);
     color: white;
 }
-
-section.portfolio .photos {
+/* making this section by grid  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+/* section.portfolio .photos {
     display: grid;
     gap: 5px;
-    max-width: 1499px;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    margin: auto;
+} */
+
+/* making this section by flex  !!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+section.portfolio .photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
 }
+@media (min-width:768px){
+    section.portfolio .photos div {
+        flex-basis: calc(50% - 5px);
+    }
+}
+@media (min-width:1200px) {
+    section.portfolio .photos div {
+        flex-basis: calc(25% - 5px);
+    }
+}
+
+
 section.portfolio .photos div {
     overflow: hidden;
     position: relative;
@@ -481,10 +501,12 @@ section.portfolio .photos img {
     width: 100%;
     height: 100%;
     transition: transform .3s ease-in-out;
+    /* filter: grayscale(1); */
 }
 
 section.portfolio .photos div:hover img {
     transform: rotate(5deg) scale(1.2);
+    filter: grayscale(1);
 }
 
 section.portfolio .photos div:hover img + p {
@@ -492,3 +514,112 @@ section.portfolio .photos div:hover img + p {
     bottom: 0px;
     transform-origin: t center;
 }
+
+section.portfolio button {
+    background-color: var(--main-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    margin: auto;
+    display: block;
+    margin-top: 5rem ;
+    margin-bottom: 10rem;
+    border-radius: 5px;
+}
+
+section.portfolio button:hover {
+    background-color: var(--trans-color);
+}
+
+/* the start of vedio block section  *******************************************/
+
+section.video-block {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+section.video-block video {
+    width: 100%;
+}
+
+section.video-block .overlay {
+    position: absolute;
+    top: 0;
+}
+
+section.video-block .text {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    background-color: var(--trans-color);
+    width: 100%;
+    height: 250px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+section.video-block .text h3 {
+    font-weight: normal;
+    /* margin-bottom: 20px; */
+    font-size: 22px;
+}
+
+section.video-block .text p {
+    /* margin-bottom: 20px; */
+    font-size: 18px;
+}
+
+section.video-block .text button {
+    border: none;
+    display: block;
+    width: 120px;
+    /* margin: auto; */
+    padding: 10px 15px;
+    background-color: black;
+    color: white;
+}
+/* the end of vedio block section  *******************************************/
+/* the start of about us  section  *******************************************/
+section.about {
+    margin-bottom: 30px;
+}
+
+section.about .image {
+    text-align: center;
+    margin-top: 40px;
+    overflow: hidden;
+    height: 250px;
+    max-width: 710px;
+    margin: auto;
+}
+
+section.about .image img {
+    width: 100%;
+    padding-right: 20px;
+}
+
+@media (max-width:767px) {
+    section.about .image {
+        height: 180px;
+    }
+    section.about .image img {
+        width: 100%;
+    }
+}
+@media (max-width:575px) {
+    section.about .image {
+        height: 140px;
+    }
+}
+/* the end of about us block section  *******************************************/
+/* the start of statistics block section  *******************************************/
+section.statistics {
+    background-image: url(../imgs/stats.png);
+}
+/* the end of statistics block section  *******************************************/
