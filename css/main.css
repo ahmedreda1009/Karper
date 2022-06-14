@@ -94,11 +94,11 @@ body{
 
 /* 2. overlay */
 
-.overlay {
+/* .overlay {
     background-color: hsla(0, 0%, 0%, 0.535);
     width: 100%;
     height: 100%;
-}
+} */
 
 /*  =============
       variables
@@ -548,6 +548,9 @@ section.video-block video {
 }
 
 section.video-block .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
     position: absolute;
     top: 0;
 }
@@ -629,6 +632,9 @@ section.statistics {
 }
 
 section.statistics .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
     position: absolute;
     top: 0;
     z-index: -1;
@@ -705,7 +711,7 @@ section.testimonials-skills {
 section.testimonials-skills .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    column-gap: 80px;
+    column-gap: 100px;
 }
 
 section.testimonials-skills .testimonials .head,
@@ -757,10 +763,6 @@ section.testimonials-skills .testimonials .content article .text {
     border-bottom: 1px solid rgba(0, 0, 0, 0.26);
 }
 
-section.testimonials-skills .testimonials .content article .text p {
-    /* margin-block: 20px; */
-}
-
 section.testimonials-skills .testimonials .content article .text div h4 {
     margin-block: 10px;
     float: right;
@@ -790,10 +792,6 @@ section.testimonials-skills .skills .prog-bars {
     flex-direction: column;
     gap: 30px;
 }
-
-/* section.testimonials-skills .skills .prog-bars .bar {
-    margin-block: 30px;
-} */
 
 section.testimonials-skills .skills .prog-bars .bar h3 {
     font-weight: 500;
@@ -843,7 +841,7 @@ section.testimonials-skills .skills .prog-bars .bar div .prog::before {
     width: 40px;
     height: 30px;
     background-color: black;
-    border-radius: 2px;
+    border-radius: 3px;
     color: white;
     text-align: center;
     line-height: 30px;
@@ -865,3 +863,191 @@ section.testimonials-skills .skills .prog-bars .bar:nth-child(4) div .prog::befo
     content: '95%';
 }
 /* the end of testimonials-skills section  *******************************************/
+/* the start of blockqoute section  *******************************************/
+section.blockqoute {
+    background-image: url(../imgs/quote.jpg);
+    background-size: cover;
+    min-height: 300px;
+    font-size: 35px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+section.blockqoute .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.916);
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+section.blockqoute .container {
+    text-align: center;
+    color: white;
+    font-weight: 100;
+    position: absolute;
+    top: calc(50% + 15px);
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+section.blockqoute .container blockquote {
+    margin-bottom: 30px;
+}
+@media (max-width: 700px) {
+    section.blockqoute .container blockquote {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+}
+
+section.blockqoute cite {
+    font-size: 20px;
+}
+/* the end of blockqoute section  *******************************************/
+/* the start of pricing section  *******************************************/
+section.pricing {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+section.pricing .bundles {
+    margin-block: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+section.pricing .bundles section {
+    background-color: rgba(225, 225, 225, 0.115);
+}
+
+section.pricing .bundles section .head {
+    padding: 30px;
+    border: 1px solid var(--main-color);
+    border-left: none;
+    border-right:none;
+}
+
+section.pricing .bundles section .head h3 {
+    font-size: 30px;
+    font-weight: normal;
+    padding-block: 20px;
+}
+
+section.pricing .bundles section .head div {
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+section.pricing .bundles section .head div sup,
+section.pricing .bundles section .head div sub {
+    font-weight: normal;
+    font-size: 18px;
+}
+
+section.pricing .bundles section .features {
+    /* padding: 40px; */
+    border-bottom: 1px solid var(--main-color);
+}
+
+section.pricing .bundles section .features h4 {
+    width: 150px;
+    margin: auto;
+    font-size: 18px;
+    font-weight: 100;
+    padding-block: 20px;
+    border-bottom: 1px solid var(--main-color);
+}
+
+section.pricing .bundles section .features h4:last-child {
+    border: none;
+}
+
+section.pricing .bundles section .action button {
+    margin-block: 20px;
+    border: 1px solid var(--main-color);
+    padding: 10px 15px;
+
+}
+
+section.pricing .footer p {
+    font-size: 20px;
+    margin-top: 55px;
+}
+
+section.pricing .footer button {
+    margin-block: 30px;
+    border: 1px solid rgba(123, 123, 123, 0.492);
+    background-color: var(--main-color);
+    color: white;
+    padding: 10px 15px;
+}
+/* the start of subscribe section  *******************************************/
+section.subscribe {
+    background-image: url(../imgs/subscribe.jpg);
+    background-size: cover;
+    height: 250px;
+    position: relative;
+    z-index: 0;
+}
+
+section.subscribe .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.553);
+    position: absolute;
+    z-index: -1;
+}
+
+section.subscribe .container {
+    height: 100%;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+@media (max-width:700px) {
+    section.subscribe .container {
+        flex-direction: column;
+    }
+}
+
+section.subscribe .container form i {
+    color: white;
+    position: relative;
+    left: 45px;
+}
+
+section.subscribe .container form input {
+    background: none;
+    border: 1px solid white;
+    padding: 20px;
+    color: white;
+}
+
+section.subscribe .container form input[type="email"] {
+    border-right: none;
+    padding-left: 60px;
+    caret-color: var(--main-color);
+}
+
+section.subscribe .container form input[type="email"]:focus {
+    outline: none;
+}
+
+section.subscribe .container form input[type="submit"] {
+    border-left: none;
+    background-color: var(--main-color);
+    position: relative;
+    right: 5px;
+}
+
+section.subscribe .container p {
+    color: white;
+    font-size: 18px;
+    flex: 1;
+}
+/* the end of subscribe section  *******************************************/
