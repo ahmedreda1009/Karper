@@ -121,6 +121,7 @@ header {
     position: absolute;
     top: 0;
     width: 100%;
+    z-index: 3;
 }
 
 header .container {
@@ -173,15 +174,26 @@ header nav li:hover a {
     font-size: 1.25rem;
 }
 
+/* the end of the header ****************************************************/
+
+/* the beginning of the main ***********************************************/
 main {
     height: 100vh;
     background-image: url(../imgs/landing.jpg);
     background-size: cover;
+    position: relative;
+    z-index: 0;
 }
 
-/* the end of the header ****************************************************/
+main .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
 
-/* the beginning of the main ***********************************************/
 main .text {
     width: 50%;
     background-color: var(--trans-color);
@@ -220,6 +232,7 @@ main .text .content {
     position: absolute;
     top:50%;
     border-radius: 4px;
+    z-index: 10;
 }
 .arrow .left {
     transform: rotate(45deg);
@@ -240,6 +253,7 @@ main .text .content {
     bottom: 30px;
     left: 50%;
     transform: translatex(-50%);
+    z-index: 10;
 }
 
 .bullets > div {
@@ -374,7 +388,11 @@ section.image-block {
 }
 
 section.image-block .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-color);
     position: absolute;
+    top: 0;
 }
 
 section.image-block .img {
@@ -909,7 +927,7 @@ section.blockqoute cite {
 /* the start of pricing section  *******************************************/
 section.pricing {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 section.pricing .bundles {
@@ -945,7 +963,11 @@ section.pricing .bundles section .head div {
 section.pricing .bundles section .head div sup,
 section.pricing .bundles section .head div sub {
     font-weight: normal;
-    font-size: 18px;
+    font-size: 20px;
+}
+
+section.pricing .bundles section .head div sup {
+    font-size: 25px;
 }
 
 section.pricing .bundles section .features {
@@ -989,65 +1011,187 @@ section.pricing .footer button {
 section.subscribe {
     background-image: url(../imgs/subscribe.jpg);
     background-size: cover;
-    height: 250px;
+    color: white;
     position: relative;
     z-index: 0;
+    margin-bottom: 50px;
 }
 
 section.subscribe .overlay {
+    position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.553);
-    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.589);
     z-index: -1;
 }
 
 section.subscribe .container {
-    height: 100%;
-    padding-top: 20px;
     display: flex;
-    align-items: center;
-    gap: 70px;
+    gap: 50px;
+    align-items: stretch;
+    padding-block: 100px;
 }
-@media (max-width:700px) {
+
+section.subscribe .container form {
+    position: relative;
+    display: flex;
+    width: 500px;
+    max-width: 80%;
+    align-self: center;
+}
+
+section.subscribe .container form i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section.subscribe .container form input:first-of-type {
+    background: none;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid white;
+    border-right: none;
+    caret-color: var(--main-color);
+    flex-grow: 1;
+}
+
+section.subscribe .container form input:first-of-type:focus {
+    outline: none;
+}
+
+section.subscribe .container form input:first-of-type::placeholder {
+    color: white;
+}
+
+section.subscribe .container form input:last-of-type {
+    background-color: var(--main-color);
+    border: 1px solid white;
+    color: white;
+    padding: 15px;
+    border-left: none;
+}
+
+@media (max-width: 992px) {
     section.subscribe .container {
         flex-direction: column;
     }
 }
-
-section.subscribe .container form i {
-    color: white;
-    position: relative;
-    left: 45px;
+/* the end of subscribe section  *******************************************/
+/* the start of contact us section  *******************************************/
+.contact-us {
+    margin-bottom: 100px;
 }
 
-section.subscribe .container form input {
-    background: none;
-    border: 1px solid white;
-    padding: 20px;
-    color: white;
+.contact-us .content {
+    display: flex;
+    gap: 60px;
 }
 
-section.subscribe .container form input[type="email"] {
-    border-right: none;
-    padding-left: 60px;
-    caret-color: var(--main-color);
+.contact-us form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 2;
+    max-width: 1000px;
 }
 
-section.subscribe .container form input[type="email"]:focus {
+.contact-us form *:focus {
     outline: none;
 }
 
-section.subscribe .container form input[type="submit"] {
-    border-left: none;
-    background-color: var(--main-color);
-    position: relative;
-    right: 5px;
+.contact-us form > * {
+    padding: 20px;
+    border: 1px solid rgb(179, 178, 178);
 }
 
-section.subscribe .container p {
-    color: white;
-    font-size: 18px;
-    flex: 1;
+.contact-us form textarea {
+    resize: vertical;
 }
-/* the end of subscribe section  *******************************************/
+
+.contact-us form input:last-of-type {
+    width: 150px;
+    align-self: flex-end;
+    background-color: var(--main-color);
+    color: white;
+}
+
+@media (max-width: 750px) {
+    .contact-us .content {
+        flex-direction: column;
+    }
+    .contact-us .content form {
+        order: 2;
+    }
+    .contact-us .content .text {
+        order: 1;
+        align-self: center;
+    }
+    .contact-us .content .text p {
+        text-align: center;
+    }
+}
+
+.contact-us .content .text {
+    flex-grow: .5;
+}
+
+.contact-us .content .text div:first-child {
+    margin-bottom: 40px;
+}
+
+.contact-us .content .text h3 {
+    margin-block: 20px;
+    font-weight: normal;
+}
+
+.contact-us .content .text p {
+    font-weight: normal;
+    font-size: 16px;
+    color: var(--light-black-color);
+
+}
+/* the end of contact us section  *******************************************/
+/* the start of footer us section  *******************************************/
+footer {
+    position: relative;
+    background-image: url(../imgs/subscribe.jpg);
+    background-size: cover;
+    z-index: 0;
+    text-align: center;
+    color: white;
+    padding-block: 50px;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.678);
+    z-index: -1;
+}
+
+footer .logo {
+    margin-block: 30px;
+}
+
+footer p {
+    margin-block: 30px;
+}
+
+footer .icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+footer p span {
+    color: var(--main-color);
+    font-weight: bold;
+}
+/* the end of footer us section  *******************************************/
